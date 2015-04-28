@@ -81,11 +81,11 @@
               )
               ( (equal? (commentStatus thisLine) 'begin) ;; beginning of documentation block
                 (set! prevLine 'docu)
-                (each-line file fileNm requireLst includeLst provideLst procHeaderLst procBodyLst (cons (string-replace thisLine "\"" "\\\"") procDocLst))
+                (each-line file fileNm requireLst includeLst provideLst procHeaderLst procBodyLst (cons (string-replace (string-replace thisLine "\"" "\\\"") "|" "") procDocLst))
               )
               ( (equal? (commentStatus (string-replace thisLine "\"" "\\\"")) 'middle) ;; middle of documentation block
                 (set! prevLine 'docu)
-                (each-line file fileNm requireLst includeLst provideLst procHeaderLst procBodyLst (cons (string-append (car procDocLst) "\n" (string-replace thisLine "\"" "\\\"")) (cdr procDocLst)))
+                (each-line file fileNm requireLst includeLst provideLst procHeaderLst procBodyLst (cons (string-append (car procDocLst) "\n" (string-replace (string-replace thisLine "\"" "\\\"") "|" "")) (cdr procDocLst)))
               )
               ( (and (equal? (procBody? thisLine) #t)
                      (equal? prevLine 'procHead)
@@ -96,7 +96,7 @@
               ( (and (equal? (procBody? thisLine) #t)
                      (equal? prevLine 'procBody)
                 )
-                (each-line file fileNm requireLst includeLst provideLst procHeaderLst (cons (string-append (car procBodyLst) "\n" (string-replace thisLine "\"" "\\\"")) (cdr procBodyLst)) procDocLst)
+                (each-line file fileNm requireLst includeLst provideLst procHeaderLst (cons (string-append (car procBodyLst) "|" (string-replace thisLine "\"" "\\\"")) (cdr procBodyLst)) procDocLst)
               )
               (else
                (set! prevLine 'null) ;; inside procedure

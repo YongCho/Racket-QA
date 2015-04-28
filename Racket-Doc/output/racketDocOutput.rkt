@@ -5,7 +5,7 @@
 ;; directory containing this file, and run			;;
 ;; "racket [file_name].rkt".					;;
 ;;                                                              ;;
-;; Date Generated On: 4/25/2015                                 ;;
+;; Date Generated On: 4/27/2015                                 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -49,8 +49,7 @@
 (define (fileNameList-page request)
   (local ((define (response-generator embed/url)
             (response/xexpr
-             `(html (head (title "Racket-Doc"))
-               (body (h1 "*.rkt Files")
+             `(html (head (title "Racket-Doc")                          (link ((rel "stylesheet")                                 (href "/test-static.css")                                 (type "text/css"))))               (body (h1 "*.rkt Files")
                      (center (a ((href ,(embed/url main-page))) "Home"))
                      (br)(br)
                      (p (b "Files:"))
@@ -64,8 +63,7 @@
 (define (Test.rkt-page request)
   (local ((define (response-generator embed/url)
             (response/xexpr
-             `(html (head (title "Racket-Doc"))
-               (body (h1 "*.rkt Files")
+             `(html (head (title "Racket-Doc")                          (link ((rel "stylesheet")                                 (href "/test-static.css")                                 (type "text/css"))))               (body (h1 "*.rkt Files")
                      (center
                       (a ((href ,(embed/url main-page))) "Home")
                       (html nbsp nbsp nbsp nbsp)
@@ -88,36 +86,30 @@
                      (b "Procedures & Data")
                      (fieldset
                       (code (list (b "(define (square num)") (br)
-                             (i "#||
- | This function squares a given number.
- | @param num Is the number to be squared.
- |          
- | @return the square of the numbers
- |#") (br))))
-                     (a ((href, (embed/url codeblock0-page))) "Code")
-                             (br) (br) (br)
+                             (i "#
+  This function squares a given number.
+  @param num Is the number to be squared.
+           
+  @return the square of the numbers
+ #") (br))))                             (br) (br) (br)
                      (fieldset
                       (code (list (b "(define (addFour num1 num2 num3 num4)") (br)
-                             (i "#||
- | This function adds four numbers together.
- | @param num1 The first number.
- | @param num2 The
- |	       second
- |	       number.
- | @param num3 The third number.
- | @param num4 The fourth number.
- | @return The sum of the numbers.
- |#") (br))))
-                     (a ((href, (embed/url codeblock1-page))) "Code")
-                             (br) (br) (br)
+                             (i "#
+  This function adds four numbers together.
+  @param num1 The first number.
+  @param num2 The
+ 	       second
+ 	       number.
+  @param num3 The third number.
+  @param num4 The fourth number.
+  @return The sum of the numbers.
+ #") (br))))                             (br) (br) (br)
                      (fieldset
                       (code (list (b "(define five") (br)
-                             (i "#||
- | Created a variable named five.
- | and gave it a value.
- |#") (br))))
-                     (a ((href, (embed/url codeblock2-page))) "Code")
-                             (br) (br) (br)
+                             (i "#
+  Created a variable named five.
+  and gave it a value.
+ #") (br))))                             (br) (br) (br)
                          )))))
     (send/suspend/dispatch response-generator)))
 
@@ -126,8 +118,7 @@
 (define (required-page request)
   (local ((define (response-generator embed/url)
             (response/xexpr
-             `(html (head (title "Racket-Doc"))
-               (body (h1 "Dependencies")
+             `(html (head (title "Racket-Doc")                          (link ((rel "stylesheet")                                 (href "/test-static.css")                                 (type "text/css"))))               (body (h1 "Dependencies")
                      (center (a ((href ,(embed/url main-page))) "Home"))
                      (br)(br)
                      (b "Required")
@@ -140,8 +131,7 @@
 (define (provided-page request)
   (local ((define (response-generator embed/url)
             (response/xexpr
-             `(html (head (title "Racket-Doc"))
-               (body (h1 "Provided")
+             `(html (head (title "Racket-Doc")                          (link ((rel "stylesheet")                                 (href "/test-static.css")                                 (type "text/css"))))               (body (h1 "Provided")
                      (center (a ((href ,(embed/url main-page))) "Home"))
                      (b "Provided")
                      (fieldset (code (list "(provide square)" (br) )))
@@ -153,41 +143,40 @@
 (define (procAndData-page request)
   (local ((define (response-generator embed/url)
             (response/xexpr
-             `(html (head (title "Racket-Doc"))
-               (body (h1 "Procedures & Data")
+             `(html (head (title "Racket-Doc")                          (link ((rel "stylesheet")                                 (href "/test-static.css")                                 (type "text/css"))))               (body (h1 "Procedures & Data")
                      (center (a ((href ,(embed/url main-page))) "Home"))
                      ;;add procs and data
                      (br) (br)
                      (fieldset
                       (code (list (b "(define (square num)") (br)
-                             (i "#||
- | This function squares a given number.
- | @param num Is the number to be squared.
- |          
- | @return the square of the numbers
- |#") (br))))
+                             (i "#
+  This function squares a given number.
+  @param num Is the number to be squared.
+           
+  @return the square of the numbers
+ #") (br))))
                      (a ((href, (embed/url codeblock0-page))) "Code")
                              (br) (br) (br)
                      (fieldset
                       (code (list (b "(define (addFour num1 num2 num3 num4)") (br)
-                             (i "#||
- | This function adds four numbers together.
- | @param num1 The first number.
- | @param num2 The
- |	       second
- |	       number.
- | @param num3 The third number.
- | @param num4 The fourth number.
- | @return The sum of the numbers.
- |#") (br))))
+                             (i "#
+  This function adds four numbers together.
+  @param num1 The first number.
+  @param num2 The
+ 	       second
+ 	       number.
+  @param num3 The third number.
+  @param num4 The fourth number.
+  @return The sum of the numbers.
+ #") (br))))
                      (a ((href, (embed/url codeblock1-page))) "Code")
                              (br) (br) (br)
                      (fieldset
                       (code (list (b "(define five") (br)
-                             (i "#||
- | Created a variable named five.
- | and gave it a value.
- |#") (br))))
+                             (i "#
+  Created a variable named five.
+  and gave it a value.
+ #") (br))))
                      (a ((href, (embed/url codeblock2-page))) "Code")
                              (br) (br) (br)
                      )))))
@@ -198,13 +187,24 @@
 (define (codeblock0-page request)
   (local ((define (response-generator embed/url)
             (response/xexpr
-             `(html (head (title "Racket-Doc"))
-               (body (h1 "Procedure")
+             `(html (head (title "Racket-Doc")                          (link ((rel "stylesheet")                                 (href "/test-static.css")                                 (type "text/css"))))                (body (h3 "Procedure:  (define (square num)")
                      (center (a ((href ,(embed/url fileNameList-page))) "<--Back"))
                      (br)(br)
-                     (p "  (* num num)
-  (display \"finished doing math\")
-  (display \"reached end of procedure squre\"))")
+                      (fieldset (code (list "  (* num num)"
+(br)
+"  (display \"finished doing math\")"
+(br)
+"  (display \"reached end of procedure squre\")"
+(br)
+"  (dispayy \"testing\")"
+(br)
+"  (display \"longish\")"
+(br)
+"  (display \"procedure\")"
+(br)
+"  (display \"body\"))"
+(br)
+)))
                      )))))
     (send/suspend/dispatch response-generator)))
 
@@ -213,12 +213,14 @@
 (define (codeblock1-page request)
   (local ((define (response-generator embed/url)
             (response/xexpr
-             `(html (head (title "Racket-Doc"))
-               (body (h1 "Procedure")
+             `(html (head (title "Racket-Doc")                          (link ((rel "stylesheet")                                 (href "/test-static.css")                                 (type "text/css"))))                (body (h3 "Procedure:  (define (addFour num1 num2 num3 num4)")
                      (center (a ((href ,(embed/url fileNameList-page))) "<--Back"))
                      (br)(br)
-                     (p "  (display \"this is a string to be printed\")
-  (+ num1 num2 num3 num4))")
+                      (fieldset (code (list "  (display \"this is a string to be printed\")"
+(br)
+"  (+ num1 num2 num3 num4))"
+(br)
+)))
                      )))))
     (send/suspend/dispatch response-generator)))
 
@@ -227,11 +229,12 @@
 (define (codeblock2-page request)
   (local ((define (response-generator embed/url)
             (response/xexpr
-             `(html (head (title "Racket-Doc"))
-               (body (h1 "Procedure")
+             `(html (head (title "Racket-Doc")                          (link ((rel "stylesheet")                                 (href "/test-static.css")                                 (type "text/css"))))                (body (h3 "Procedure:  (define five")
                      (center (a ((href ,(embed/url fileNameList-page))) "<--Back"))
                      (br)(br)
-                     (p "     5)")
+                      (fieldset (code (list "     5)"
+(br)
+)))
                      )))))
     (send/suspend/dispatch response-generator)))
 
@@ -240,11 +243,10 @@
 (define (help-page request)
   (local ((define (response-generator embed/url)
             (response/xexpr
-             `(html (head (title "Racket-Doc"))
-               (body (h1 "Help")
+             `(html (head (title "Racket-Doc")                          (link ((rel "stylesheet")                                 (href "/test-static.css")                                 (type "text/css"))))               (body (h1 "Help")
                      (center (a ((href ,(embed/url main-page))) "Home"))
                      (br)(br)
-                     (p "help page...")
+                     (p "For more information, run the project and select the About Me option")
                      )))))
     (send/suspend/dispatch response-generator)))
 
